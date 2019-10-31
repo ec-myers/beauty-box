@@ -7,3 +7,8 @@ export const setMascaras = mascaras => ({
   type: 'SET_MASCARAS',
   mascaras
 })
+
+export const setFoundations = foundations => ({
+  type: 'SET_FOUNDATIONS',
+  foundations
+})
