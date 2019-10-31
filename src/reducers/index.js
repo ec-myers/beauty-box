@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import { lipsticks } from './lipsticks';
+import { mascaras } from './mascaras';
 
 const rootReducer = combineReducers({
-  lipsticks
+  lipsticks,
+  mascaras
 });
 
 export default rootReducer;
