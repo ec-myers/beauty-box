@@ -12,3 +12,8 @@ export const setFoundations = foundations => ({
   type: 'SET_FOUNDATIONS',
   foundations
 })
+
+export const setBlushes = blushes => ({
+  type: 'SET_BLUSHES',
+  blushes
+})
