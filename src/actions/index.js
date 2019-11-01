@@ -17,3 +17,8 @@ export const setBlushes = blushes => ({
   type: 'SET_BLUSHES',
   blushes
 })
+
+export const setEyeshadows = eyeshadows => ({
+  type: 'SET_EYESHADOWS',
+  eyeshadows
+})
