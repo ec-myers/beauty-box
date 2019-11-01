@@ -1,0 +1,8 @@
+.Container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  overflow: scroll;
+  padding: 35px;
+  height: 100vh;
+}
