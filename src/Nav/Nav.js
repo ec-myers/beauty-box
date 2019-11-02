@@ -5,7 +5,7 @@ import './Nav.scss';
 const Nav = () => {
   return(
     <div className='Nav'>
-      <img></img>
+      <h3>BEAUTYBOX</h3>
       <div className='Nav-links'>
         <NavLink exact to='/'>
           {/* <input type='image'></input> */}
