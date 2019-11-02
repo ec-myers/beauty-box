@@ -10,7 +10,7 @@ const Nav = () => {
         <NavLink exact to='/'>
           {/* <input type='image'></input> */}
         </NavLink>
-        <NavLink to='collection'>Collection
+        <NavLink to='collection'>YOUR COLLECTION
         </NavLink>
       </div>
 
