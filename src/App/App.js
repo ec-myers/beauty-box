@@ -34,17 +34,8 @@ class App extends Component {
         <Nav />
         <Route exact path='/' render={() => <Category />} />
         <Route exact path='/products/:type' render={({match}) => {
-          let productType = Object.keys(this.props).find(type => {
-            console.log('match.params.type', match.params.type )
-            console.log('type',type)
-            return type === match.params.type})
-          console.log('productType',productType)
-          console.log(this.props[productType])
+          let productType = Object.keys(this.props).find(type => type === match.params.type)
         return <Container productType={this.props[productType]}/>}}/>
-        {/* <Route exact path='/blush' render={() => <Container />} />
-        <Route exact path='/mascara' render={() => <Container />} />
-        <Route exact path='/eyeshadow' render={() => <Container />} />
-        <Route exact path='/lipstick' render={() => <Container />} /> */}
       </>
     )
   }
