@@ -25,3 +25,35 @@ describe('Product', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+
+describe('mapStateToProps', () => {
+  it('should return an array of objects', () => {
+    let mockState = {
+      collection: [{
+      id: 1047,
+      brand: "colourpop",
+      name: "Blotted Lip",
+      image_link: "https://file.com",
+      product_link: "https://colourpop.com/",
+      description: "Description",
+      tag_list: ['tag1', 'tag2']
+      }]
+    };
+
+    let expected = {
+      collection: [{
+      id: 1047,
+      brand: "colourpop",
+      name: "Blotted Lip",
+      image_link: "https://file.com",
+      product_link: "https://colourpop.com/",
+      description: "Description",
+      tag_list: ['tag1', 'tag2']
+      }]
+    };
+
+    let mappedProps = mapStateToProps(mockState);
+
+    expect(mappedProps).toEqual(expected);
+  });
+});
