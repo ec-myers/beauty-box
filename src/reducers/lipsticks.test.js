@@ -7,4 +7,15 @@ describe('lipsticks', () => {
 
     expect(result).toEqual(expected);
   });
+
+  it('should match case SET_LIPSTICKS if action type is correct', () => {
+    const initialState = [];
+    const action = {
+      type: 'SET_LIPSTICKS',
+      lipsticks: [{}, {}, {}]
+    };
+    const result = [{}, {}, {}];
+
+    expect(lipsticks(initialState, action)).toEqual(result);
+  });
 });
