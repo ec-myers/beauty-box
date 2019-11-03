@@ -31,4 +31,12 @@ describe('getProduct', () => {
   
     expect(getProduct(product)).rejects.toEqual(Error('Could not fetch product'));
   });
+
+  it('should return an error if the server is down', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('failed to fetch'))
+    });
+
+    expect(getProduct(product)).rejects.toEqual(Error('failed to fetch'));
+  });
 });
