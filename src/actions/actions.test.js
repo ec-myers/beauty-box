@@ -25,5 +25,17 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type SET_FOUNDATIONS', () => {
+    const foundations = [{}, {}, {}];
+    const expectedAction = {
+      type: 'SET_FOUNDATIONS',
+      foundations
+    };
+
+    const result = actions.setFoundations(foundations);
+
+    expect(result).toEqual(expectedAction);
+  });
+
   
 });
