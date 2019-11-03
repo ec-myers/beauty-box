@@ -57,6 +57,9 @@ class App extends Component {
   }
 
   render() {
+    const { foundations, mascaras, eyeshadows, blushes, lipsticks } = this.props;
+    let allCategories = [...foundations, ...mascaras, ...eyeshadows, ...blushes, ...lipsticks];
+    console.log('allCategories', allCategories)
     return(
       <>
         <Nav />
@@ -64,7 +67,8 @@ class App extends Component {
         <Route exact path='/products/:type' render={({match}) => {
           let productType = Object.keys(this.props).find(type => type === match.params.type)
         return <Container productType={this.props[productType]} toggleCollection={this.toggleCollection}/>}}/>
-        <Route exact path='/collection' render={() => <Container type='collection' collection={this.props.collection}/>} />
+        <Route exact path='/collection' render={() => <Container type='collection' collection={this.props.collection} />} />
+        <Route exact path='/shopall' render={() => <Container type='shopall' allCategories={allCategories} />} />
       </>
     )
   }
