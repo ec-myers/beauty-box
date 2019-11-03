@@ -18,4 +18,14 @@ describe('collection', () => {
 
     expect(collection(initialState, action)).toEqual(result);
   });
+
+  it('should match case SET_COLLECTION if action type is incorrect', () => {
+    const initialState = [];
+    const action = {
+      type: 'WRONG_TYPE',
+      collection: [{}, {}, {}]
+    };
+
+    expect(collection(initialState, action)).toEqual(initialState);
+  }); 
 });
