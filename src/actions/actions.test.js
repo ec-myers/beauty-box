@@ -85,5 +85,15 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type SET_LOADING', () => {
+    const isLoading = true;
+    const expectedAction = {
+      type: 'SET_LOADING',
+      isLoading
+    };
 
+    const result = actions.setLoading(isLoading);
+
+    expect(result).toEqual(expectedAction);
+  });
 });
