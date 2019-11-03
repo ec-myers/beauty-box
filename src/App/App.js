@@ -4,14 +4,14 @@ import Nav from '../Nav/Nav';
 import Category from '../Category/Category';
 import Container from '../Container/Container';
 import { getProduct } from '../util/apiCalls';
-import { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection } from '../actions';
+import { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection, setError } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount = async() => {
-    const { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows } = this.props;
+    const { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setError } = this.props;
     try {
       const lipsticks = await getProduct('lipstick');
       setLipsticks(lipsticks);
@@ -30,7 +30,7 @@ class App extends Component {
         setCollection(collection);
       }
     } catch ({message}){
-      console.log(message)
+      setError(message)
     }
   }
 
@@ -67,17 +67,18 @@ class App extends Component {
   }
 }
 
-export const mapStateToProps = ({ lipsticks, mascaras, foundations, blushes, eyeshadows, collection }) => ({
+export const mapStateToProps = ({ lipsticks, mascaras, foundations, blushes, eyeshadows, collection,error }) => ({
   lipsticks,
   mascaras,
   foundations,
   blushes,
   eyeshadows,
-  collection
+  collection,
+  error
 });
 
 export const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection }, dispatch) 
+  return bindActionCreators({ setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection, setError }, dispatch) 
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
