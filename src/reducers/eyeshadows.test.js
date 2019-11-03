@@ -18,4 +18,14 @@ describe('eyeshadows', () => {
 
     expect(eyeshadows(initialState, action)).toEqual(result);
   });
+
+  it('should not match case SET_EYESHADOWS if action type is incorrect', () => {
+    const initialState = [];
+    const action = {
+      type: 'WRONG_TYPE',
+      blushes: [{}, {}, {}]
+    };
+
+    expect(eyeshadows(initialState, action)).toEqual(initialState);
+  });  
 });
