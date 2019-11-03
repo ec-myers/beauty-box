@@ -61,5 +61,17 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type SET_COLLECTION', () => {
+    const collection = [{}, {}, {}];
+    const expectedAction = {
+      type: 'SET_COLLECTION',
+      collection
+    };
+
+    const result = actions.setCollection(collection);
+
+    expect(result).toEqual(expectedAction);
+  });
+
   
 });
