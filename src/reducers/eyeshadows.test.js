@@ -7,4 +7,15 @@ describe('eyeshadows', () => {
 
     expect(result).toEqual(expected);
   });
+
+  it('should match case SET_EYESHADOWS if action type is correct', () => {
+    const initialState = [];
+    const action = {
+      type: 'SET_EYESHADOWS',
+      eyeshadows: [{}, {}, {}]
+    };
+    const result = [{}, {}, {}];
+
+    expect(eyeshadows(initialState, action)).toEqual(result);
+  });
 });
