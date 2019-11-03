@@ -23,6 +23,12 @@ class App extends Component {
       setBlushes(blushes);
       const eyeshadows = await getProduct('eyeshadow');
       setEyeshadows(eyeshadows);
+
+      if (localStorage.getItem('collection')) {
+        const { setCollection } = this.props;
+        let collection = JSON.parse(localStorage.getItem('collection'));
+        setCollection(collection);
+      }
     } catch ({message}){
       console.log(message)
     }
@@ -37,12 +43,14 @@ class App extends Component {
     const { collection, setCollection } = this.props;
     let newCollection = [...collection, product];
     setCollection(newCollection);
+    localStorage.setItem('collection', JSON.stringify(newCollection));
   }
 
   removeProduct = (product) => {
     const { collection, setCollection } = this.props;
     let newCollection = collection.filter(savedProduct => savedProduct.id !== product.id);
     setCollection(newCollection);
+    localStorage.setItem('collection', JSON.stringify(newCollection));
   }
 
   render() {
@@ -53,6 +61,7 @@ class App extends Component {
         <Route exact path='/products/:type' render={({match}) => {
           let productType = Object.keys(this.props).find(type => type === match.params.type)
         return <Container productType={this.props[productType]} toggleCollection={this.toggleCollection}/>}}/>
+        <Route exact path='/collection' render={() => <Container type='collection' collection={this.props.collection}/>} />
       </>
     )
   }
