@@ -49,5 +49,17 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type SET_EYESHADOWS', () => {
+    const eyeshadows = [{}, {}, {}];
+    const expectedAction = {
+      type: 'SET_EYESHADOWS',
+      eyeshadows
+    };
+
+    const result = actions.setEyeshadows(eyeshadows);
+
+    expect(result).toEqual(expectedAction);
+  });
+
   
 });
