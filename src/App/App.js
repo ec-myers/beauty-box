@@ -4,7 +4,7 @@ import Nav from '../Nav/Nav';
 import Category from '../Category/Category';
 import Container from '../Container/Container';
 import { getProduct } from '../util/apiCalls';
-import { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows } from '../actions';
+import { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Route } from 'react-router-dom';
@@ -13,19 +13,25 @@ class App extends Component {
   componentDidMount = async() => {
     const { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows } = this.props;
     try {
-      const lipsticks = await getProduct('lipstick');
-      setLipsticks(lipsticks);
-      const mascaras = await getProduct('mascara');
-      setMascaras(mascaras);
-      const foundations = await getProduct('foundation');
-      setFoundations(foundations);
-      const blushes = await getProduct('blush');
-      setBlushes(blushes);
-      const eyeshadows = await getProduct('eyeshadow');
-      setEyeshadows(eyeshadows);
+      // const lipsticks = await getProduct('lipstick');
+      // setLipsticks(lipsticks);
+      // const mascaras = await getProduct('mascara');
+      // setMascaras(mascaras);
+      // const foundations = await getProduct('foundation');
+      // setFoundations(foundations);
+      // const blushes = await getProduct('blush');
+      // setBlushes(blushes);
+      // const eyeshadows = await getProduct('eyeshadow');
+      // setEyeshadows(eyeshadows);
     } catch ({message}){
       console.log(message)
     }
+  }
+
+  toggleCollection(id) {
+    const { collection } = this.props;
+
+    collection.map(product => product.id).includes(id) ? this.removeProduct(id) : this.addProduct(id);
   }
 
   render() {
@@ -35,22 +41,23 @@ class App extends Component {
         <Route exact path='/' render={() => <Category />} />
         <Route exact path='/products/:type' render={({match}) => {
           let productType = Object.keys(this.props).find(type => type === match.params.type)
-        return <Container productType={this.props[productType]}/>}}/>
+        return <Container productType={this.props[productType]} toggleCollection={this.toggleCollection}/>}}/>
       </>
     )
   }
 }
 
-export const mapStateToProps = ({ lipsticks, mascaras, foundations, blushes, eyeshadows }) => ({
+export const mapStateToProps = ({ lipsticks, mascaras, foundations, blushes, eyeshadows, collection }) => ({
   lipsticks,
   mascaras,
   foundations,
   blushes,
-  eyeshadows
+  eyeshadows,
+  collection
 });
 
 export const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows }, dispatch) 
+  return bindActionCreators({ setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection }, dispatch) 
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
