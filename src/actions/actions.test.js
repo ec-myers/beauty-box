@@ -2,7 +2,25 @@ import * as actions from './index';
 
 describe('actions', () => {
   it('should have a type SET_LIPSTICKS', () => {
-    const lipsticks = [{}, {}, {}];
+    const lipsticks = [
+      {
+      id: 1047,
+      brand: "colourpop",
+      name: "Blotted Lip",
+      image_link: "https://file.com",
+      product_link: "https://colourpop.com/",
+      description: "Description",
+      tag_list:['tag1', 'tag2']
+      },
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      }];
     const expectedAction = {
       type: 'SET_LIPSTICKS',
       lipsticks
@@ -14,7 +32,25 @@ describe('actions', () => {
   });
 
   it('should have a type SET_MASCARAS', () => {
-    const mascaras = [{}, {}, {}];
+    const mascaras = [
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      },
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      }];
     const expectedAction = {
       type: 'SET_MASCARAS',
       mascaras
@@ -26,7 +62,25 @@ describe('actions', () => {
   });
 
   it('should have a type SET_FOUNDATIONS', () => {
-    const foundations = [{}, {}, {}];
+    const foundations = [
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      },
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      }];
     const expectedAction = {
       type: 'SET_FOUNDATIONS',
       foundations
@@ -38,7 +92,25 @@ describe('actions', () => {
   });
 
   it('should have a type SET_BLUSHES', () => {
-    const blushes = [{}, {}, {}];
+    const blushes = [
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      },
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      }];
     const expectedAction = {
       type: 'SET_BLUSHES',
       blushes
@@ -50,7 +122,25 @@ describe('actions', () => {
   });
 
   it('should have a type SET_EYESHADOWS', () => {
-    const eyeshadows = [{}, {}, {}];
+    const eyeshadows = [
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      },
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      }];
     const expectedAction = {
       type: 'SET_EYESHADOWS',
       eyeshadows
@@ -62,7 +152,25 @@ describe('actions', () => {
   });
 
   it('should have a type SET_COLLECTION', () => {
-    const collection = [{}, {}, {}];
+    const collection = [
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      },
+      {
+        id: 1047,
+        brand: "colourpop",
+        name: "Blotted Lip",
+        image_link: "https://file.com",
+        product_link: "https://colourpop.com/",
+        description: "Description",
+        tag_list: ['tag1', 'tag2']
+      }];
     const expectedAction = {
       type: 'SET_COLLECTION',
       collection
