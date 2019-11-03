@@ -20,4 +20,15 @@ describe('getProduct', () => {
   it('should return an array of products', () => {
     expect(getProduct(product)).resolves.toEqual(mockResponse);
   });
+
+  it('should return an error if the response is not okay', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false,
+        json: () => Promise.resolve(mockResponse)
+      });
+    });
+  
+    expect(getProduct(product)).rejects.toEqual(Error('Could not fetch product'));
+  });
 });
