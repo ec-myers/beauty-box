@@ -10,16 +10,21 @@ const Product = ({ product }) => {
   
   return (
     <div className='Product'>
-      <object className='product-img' data={product.image_link} type='image/jpg' alt={product.name}>
-        <img src={require('../Images/default_image.jpg')} alt='default'/>
-      </object>
+      <div className='image-div'>
+        <object className='product-img' data={product.image_link} type='image/jpg' alt={product.name}>
+          <img className='product-img' src={require('../Images/default_image.jpg')} alt='default' />
+        </object>
+      </div>
+      <div className='border-div'></div>
       <h3>{product.brand}</h3>
       <h4>{product.name}</h4>
       <p>{product.description}</p>
-      <ul>{ tagList }</ul>
+      <ul className='tag-list'>{tagList}</ul>
       <footer>
-        <a href={product.product_link}>Shop</a>
-        <button>ADD TO COLLECTION</button>
+        <div className='shop-div'>
+          < a href={product.product_link}>SHOP</a>
+        </div>
+        <button>ADD</button>
       </footer>
     </div>
   )
