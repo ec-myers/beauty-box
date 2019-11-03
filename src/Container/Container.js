@@ -1,20 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import Product from '../Product/Product';
 import './Container.scss';
 
-const Container = () => {
-  return (
-    <main className = 'Container'></main>
-  )
+const Container = ({productType, toggleCollection, type, collection}) => {
+  if (type === 'collection') {
+    return (collection.map(product => <Product key={product.id} product={product} toggleCollection={toggleCollection} /> ))
+  } else {
+    const productList = productType.map(product => <Product key={product.id}product={product} toggleCollection={toggleCollection} />);
+    
+    return (
+      <main className = 'Container'>
+        {productList}
+      </main>
+    )
+  }
 }
 
-mapStatetoProps = ({lipsticks, mascaras, foundations, blushes, eyeshadow}) => ({
-  lipsticks,
-  mascaras,
-  foundations,
-  blushes,
-  eyeshadows
-});
-
-export default connect(mapStateToProps)(Container);
+export default Container;

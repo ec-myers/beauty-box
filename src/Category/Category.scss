@@ -54,12 +54,14 @@ $button-hover-color: darken(rgb(191, 192, 192), 8%);
     
     &:hover {
      background-color: #cc7178;
-     transition: .2s;
+     transition: .25s;
+    box-shadow: 0 2px 20px #cc7178;
    }
     
     h4 {
       font-style: normal;
       font-size: 1.5em;
+      text-decoration: none;
     }
   }
 }

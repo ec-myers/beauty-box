@@ -13,7 +13,7 @@ export const getProduct = async product => {
 
 const cleanProductData = (data) => {
   return data.map(async result => {
-    const {id, brand, name, image_link, description, tag_list} = result;
-    return { id, brand, name, image_link, description, tag_list}
+    const {id, brand, name, image_link, product_link, description, tag_list} = result;
+    return { id, brand, name, image_link, product_link, description, tag_list}
   });
 };

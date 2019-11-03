@@ -22,3 +22,18 @@ export const setEyeshadows = eyeshadows => ({
   type: 'SET_EYESHADOWS',
   eyeshadows
 })
+
+export const setCollection = collection => ({
+  type: 'SET_COLLECTION',
+  collection
+})
+
+export const setError = error => ({
+  type: 'SET_ERROR',
+  error
+})
+
+export const setLoading = isLoading => ({
+  type: 'SET_LOADING',
+  isLoading
+})
