@@ -1,3 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Product should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`Product should match the snapshot 1`] = `
+<div
+  className="Product "
+>
+  <div
+    className="image-div"
+  >
+    <object
+      alt="Blotted Lip"
+      className="product-img"
+      data="https://file.com"
+      type="image/jpg"
+    >
+      <img
+        alt="default"
+        className="product-img"
+        src="default_image.jpg"
+      />
+    </object>
+  </div>
+  <div
+    className="border-div"
+  />
+  <h3>
+    colourpop
+  </h3>
+  <h4>
+    Blotted Lip
+  </h4>
+  <p>
+    Description
+  </p>
+  <ul
+    className="tag-list"
+  >
+    <li>
+      tag1
+    </li>
+    <li>
+      tag2
+    </li>
+  </ul>
+  <footer>
+    <div
+      className="shop-div"
+    >
+      <a
+        href="https://colourpop.com/"
+      >
+        SHOP
+      </a>
+    </div>
+    <button
+      onClick={[Function]}
+    >
+      ADD
+    </button>
+  </footer>
+</div>
+`;
