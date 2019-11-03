@@ -1,3 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Container should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`Container should match the snapshot if there is a productType 1`] = `
+<main
+  className="Container"
+>
+  <Connect(Product)
+    product="mascara"
+    toggleCollection={[MockFunction]}
+  />
+</main>
+`;
+
+exports[`Container should match the snapshot if type is collection 1`] = `
+<main
+  className="Container"
+>
+  <Connect(Product)
+    key="1047"
+    product={
+      Object {
+        "brand": "colourpop",
+        "description": "Description",
+        "id": 1047,
+        "image_link": "https://file.com",
+        "name": "Blotted Lip",
+        "product_link": "https://colourpop.com/",
+        "tag_list": Array [
+          "tag1",
+          "tag2",
+        ],
+      }
+    }
+    toggleCollection={[MockFunction]}
+  />
+</main>
+`;
+
+exports[`Container should match the snapshot if type is shopall 1`] = `
+<main
+  className="Container"
+>
+  <Connect(Product)
+    key="1047"
+    product={
+      Object {
+        "brand": "colourpop",
+        "description": "Description",
+        "id": 1047,
+        "image_link": "https://file.com",
+        "name": "Blotted Lip",
+        "product_link": "https://colourpop.com/",
+        "tag_list": Array [
+          "tag1",
+          "tag2",
+        ],
+      }
+    }
+    toggleCollection={[MockFunction]}
+  />
+</main>
+`;
