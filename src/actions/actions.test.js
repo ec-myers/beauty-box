@@ -13,5 +13,17 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
- 
+  it('should have a type SET_MASCARAS', () => {
+    const mascaras = [{}, {}, {}];
+    const expectedAction = {
+      type: 'SET_MASCARAS',
+      mascaras
+    };
+
+    const result = actions.setMascaras(mascaras);
+
+    expect(result).toEqual(expectedAction);
+  });
+
+  
 });
