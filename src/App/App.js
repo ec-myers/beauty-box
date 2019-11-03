@@ -4,15 +4,16 @@ import Nav from '../Nav/Nav';
 import Category from '../Category/Category';
 import Container from '../Container/Container';
 import { getProduct } from '../util/apiCalls';
-import { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection, setError } from '../actions';
+import { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection, setError, setLoading } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount = async() => {
-    const { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setError } = this.props;
+    const { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setError, setLoading } = this.props;
     try {
+      setLoading(true);
       const lipsticks = await getProduct('lipstick');
       setLipsticks(lipsticks);
       const mascaras = await getProduct('mascara');
@@ -23,6 +24,7 @@ class App extends Component {
       setBlushes(blushes);
       const eyeshadows = await getProduct('eyeshadow');
       setEyeshadows(eyeshadows);
+      setLoading(false)
 
       if (localStorage.getItem('collection')) {
         const { setCollection } = this.props;
@@ -31,6 +33,7 @@ class App extends Component {
       }
     } catch ({message}){
       setError(message)
+      setLoading(false)
     }
   }
 
@@ -67,18 +70,19 @@ class App extends Component {
   }
 }
 
-export const mapStateToProps = ({ lipsticks, mascaras, foundations, blushes, eyeshadows, collection,error }) => ({
+export const mapStateToProps = ({ lipsticks, mascaras, foundations, blushes, eyeshadows, collection, error, isLoading }) => ({
   lipsticks,
   mascaras,
   foundations,
   blushes,
   eyeshadows,
   collection,
-  error
+  error,
+  isLoading
 });
 
 export const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection, setError }, dispatch) 
+  return bindActionCreators({ setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection, setError, setLoading }, dispatch) 
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
