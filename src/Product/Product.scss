@@ -3,33 +3,29 @@ $font-color: rgb(5,29,65);
 $button-hover-color: darken(rgb(191, 192, 192), 8%);
 
 .Product {
-  align-items: center;
+  // cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.356);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   margin: 2% 1%;
-  width: 320px;
-  // background: linear-gradient(to left, #02BF67, rgb(85, 216, 140), rgb(236, 236, 236));
-  transition: .25s;
-  // cursor: pointer;
   padding: 4px;
+  transition: .25s;
+  width: 320px;
 
   &:hover {
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2px 10px #cc7178;
     transition: .25s;
   }
 
   .image-div {
     height: 285px;
-    width: 100%;
     overflow: hidden;
-    background: pink;
     padding: 4px;
+    width: 100%;
 
-    img {
-      width: 100%;
+    .product-img {
       transform: translateY(-30px);
+      width: 100%;
     }
   }
   
@@ -42,23 +38,76 @@ $button-hover-color: darken(rgb(191, 192, 192), 8%);
     margin: 4px;
   }
 
+  h4 {
+    margin: 4px;
+  }
+
+  p {
+    height: 200px;
+    margin: 4px;
+    overflow: scroll;
+  }
+
   ul {
-    list-style-type: none;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin: 4px;
 
     li {
-      background-color: $button-hover-color;
-      margin: 2px;
+      background-color: rgb(212, 175, 185);
       font-size: .8em;
+      margin: 2px;
     }
   }
 
   footer {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    height: 50px;
     justify-content: space-between;
 
+    .shop-div {
+      align-items: center;
+      background-color: $font-color;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      font-size: .8em;
+      font-weight: bold;
+      height: 25px;
+      justify-content: center;
+      margin-left: 4px;
+      width: 145px;
+
+      &:hover {
+       background-color: $button-hover-color;
+      }
+
+      a {
+        color: #ffffff;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+
+    button {
+      background-color: $font-color;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: .8em;
+      font-weight: bold;
+      height: 25px;
+      margin-right: 4px;
+      width: 145px;
+
+      &:hover {
+       background-color: $button-hover-color;
+      }
+    } 
   }
 }
