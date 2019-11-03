@@ -6,6 +6,7 @@ import { blushes } from './blushes';
 import { eyeshadows } from './eyeshadows';
 import { collection } from './collection';
 import { error } from './error';
+import { isLoading } from './isLoading';
 
 const rootReducer = combineReducers({
   lipsticks,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   blushes,
   eyeshadows,
   collection,
-  error
+  error,
+  isLoading
 });
 
 export default rootReducer;
