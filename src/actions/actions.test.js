@@ -73,5 +73,17 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
-  
+  it('should have a type SET_ERROR', () => {
+    const error = 'Everything is broken';
+    const expectedAction = {
+      type: 'SET_ERROR',
+      error
+    };
+
+    const result = actions.setError(error);
+
+    expect(result).toEqual(expectedAction);
+  });
+
+
 });
