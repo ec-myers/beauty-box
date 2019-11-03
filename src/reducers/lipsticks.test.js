@@ -18,4 +18,14 @@ describe('lipsticks', () => {
 
     expect(lipsticks(initialState, action)).toEqual(result);
   });
+
+  it('should not match case SET_LIPSTICKS if action type is incorrect', () => {
+    const initialState = [];
+    const action = {
+      type: 'WRONG_TYPE',
+      lipsticks: [{}, {}, {}]
+    };
+
+    expect(lipsticks(initialState, action)).toEqual(initialState);
+  }); 
 });
