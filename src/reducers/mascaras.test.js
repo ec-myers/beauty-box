@@ -18,4 +18,14 @@ describe('mascaras', () => {
 
     expect(mascaras(initialState, action)).toEqual(result);
   });
+
+  it('should not match case SET_MASCARAS if action type is incorrect', () => {
+    const initialState = [];
+    const action = {
+      type: 'WRONG_TYPE',
+      mascaras: [{}, {}, {}]
+    };
+
+    expect(mascaras(initialState, action)).toEqual(initialState);
+  }); 
 });
