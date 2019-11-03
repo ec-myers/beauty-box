@@ -18,4 +18,14 @@ describe('blushes', () => {
 
     expect(blushes(initialState, action)).toEqual(result);
   });
+
+  it('should match case SET_BLUSHES if action type is incorrect', () => {
+    const initialState = [];
+    const action = {
+      type: 'WRONG_TYPE',
+      blushes: [{}, {}, {}]
+    };
+
+    expect(blushes(initialState, action)).toEqual(initialState);
+  });  
 });
