@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './Product.scss';
 
-const Product = ({ product, toggleCollection, collection }) => {
+export const Product = ({ product, toggleCollection, collection }) => {
   // const { collection } = this.props;
   let tagList = product.tag_list.map(tag => <li>{tag}</li>);
   let { brand, name, description, product_link, id} = product;
