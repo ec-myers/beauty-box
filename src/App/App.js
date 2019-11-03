@@ -28,10 +28,16 @@ class App extends Component {
     }
   }
 
-  toggleCollection(id) {
+  toggleCollection = (product) => {
     const { collection } = this.props;
 
-    collection.map(product => product.id).includes(id) ? this.removeProduct(id) : this.addProduct(id);
+    collection.map(product => product.id).includes(product.id) ? this.removeProduct(product) : this.addProduct(product);
+  }
+
+  addProduct = (product) => {
+    const { collection } = this.props;
+    let newCollection = [...collection, product];
+    setCollection(newCollection);
   }
 
   render() {
