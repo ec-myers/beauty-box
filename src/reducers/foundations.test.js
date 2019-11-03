@@ -18,4 +18,14 @@ describe('foundations', () => {
 
     expect(foundations(initialState, action)).toEqual(result);
   });
+
+  it('should not match case SET_FOUNDATIONS if action type is incorrect', () => {
+    const initialState = [];
+    const action = {
+      type: 'WRONG_TYPE',
+      foundations: [{}, {}, {}]
+    };
+
+    expect(foundations(initialState, action)).toEqual(initialState);
+  }); 
 });
