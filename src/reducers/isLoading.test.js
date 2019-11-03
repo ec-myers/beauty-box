@@ -18,4 +18,14 @@ describe('isLoading', () => {
 
     expect(isLoading(initialState, action)).toEqual(result);
   });
+
+  it('should not match case SET_LOADING if action type is incorrect', () => {
+    const initialState = false;
+    const action = {
+      type: 'WRONG_TYPE',
+      isLoading: true
+    };
+
+    expect(isLoading(initialState, action)).toEqual(initialState);
+  }); 
 });
