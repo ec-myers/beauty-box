@@ -18,4 +18,14 @@ describe('error', () => {
 
     expect(error(initialState, action)).toEqual(result);
   });
+
+  it('should not match case SET_ERROR if action type is incorrect', () => {
+    const initialState = '';
+    const action = {
+      type: 'WRONG_TYPE',
+      collection: 'error'
+    };
+
+    expect(error(initialState, action)).toEqual(initialState);
+  }); 
 });
