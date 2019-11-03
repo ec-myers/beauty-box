@@ -11,7 +11,7 @@ const Category = ({ isLoading }) => {
       <div className='shop-div'>
         <h3>EXPLORE</h3>
         <h3>BEAUTY</h3>
-        <button>SHOP ALL</button>
+          <Link to='/shopall'><button>SHOP ALL</button></Link>
       </div>
         <img src={require('../Images/hero_image_right.jpg')} alt='perfume on a blanket'></img>
     </div>
