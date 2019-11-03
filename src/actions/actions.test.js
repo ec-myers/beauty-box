@@ -37,5 +37,17 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type SET_BLUSHES', () => {
+    const blushes = [{}, {}, {}];
+    const expectedAction = {
+      type: 'SET_BLUSHES',
+      blushes
+    };
+
+    const result = actions.setBlushes(blushes);
+
+    expect(result).toEqual(expectedAction);
+  });
+
   
 });
