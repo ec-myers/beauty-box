@@ -27,3 +27,8 @@ export const setCollection = collection => ({
   type: 'SET_COLLECTION',
   collection
 })
+
+export const setError = error => ({
+  type: 'SET_ERROR',
+  error
+})

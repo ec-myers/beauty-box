@@ -5,6 +5,7 @@ import { foundations } from './foundations';
 import { blushes } from './blushes';
 import { eyeshadows } from './eyeshadows';
 import { collection } from './collection';
+import { error } from './error';
 
 const rootReducer = combineReducers({
   lipsticks,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   foundations,
   blushes,
   eyeshadows,
-  collection
+  collection,
+  error
 });
 
 export default rootReducer;
