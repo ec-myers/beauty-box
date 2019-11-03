@@ -12,8 +12,12 @@ describe('getProduct', () => {
         json: () => Promise.resolve(mockResponse)
       });
     });
-    getProduct('mascara');
+    getProduct(product);
 
     expect(window.fetch).toHaveBeenCalledWith(url)
+  });
+
+  it('should return an array of products', () => {
+    expect(getProduct(product)).resolves.toEqual(mockResponse);
   });
 });
