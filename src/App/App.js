@@ -3,11 +3,12 @@ import './App.scss';
 import Nav from '../Nav/Nav';
 import Category from '../Category/Category';
 import Container from '../Container/Container';
+import PageNotFound from '../PageNotFound/PageNotFound';
 import { getProduct } from '../util/apiCalls';
 import { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection, setError, setLoading } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount = async() => {
@@ -60,15 +61,18 @@ class App extends Component {
     const { foundations, mascaras, eyeshadows, blushes, lipsticks } = this.props;
     let allCategories = [...foundations, ...mascaras, ...eyeshadows, ...blushes, ...lipsticks];
     console.log('allCategories', allCategories)
-    return(
+    return (
       <>
         <Nav />
-        <Route exact path='/' render={() => <Category />} />
-        <Route exact path='/products/:type' render={({match}) => {
-          let productType = Object.keys(this.props).find(type => type === match.params.type)
-        return <Container productType={this.props[productType]} toggleCollection={this.toggleCollection}/>}}/>
-        <Route exact path='/collection' render={() => <Container type='collection' collection={this.props.collection} />} />
-        <Route exact path='/shopall' render={() => <Container type='shopall' allCategories={allCategories} />} />
+        <Switch>
+          <Route exact path='/' render={() => <Category />} />
+          <Route exact path='/products/:type' render={({match}) => {
+            let productType = Object.keys(this.props).find(type => type === match.params.type)
+          return <Container productType={this.props[productType]} toggleCollection={this.toggleCollection}/>}}/>
+          <Route exact path='/collection' render={() => <Container type='collection' collection={this.props.collection} />} />
+          <Route exact path='/shopall' render={() => <Container type='shopall' allCategories={allCategories} />} />
+          <Route component={PageNotFound} />
+        </Switch>
       </>
     )
   }
