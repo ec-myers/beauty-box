@@ -63,14 +63,13 @@ class App extends Component {
     console.log('allCategories', allCategories)
     return (
       <>
-        <Nav />
         <Switch>
-          <Route exact path='/' render={() => <Category />} />
+          <Route exact path='/' render={() => <> <Nav /> <Category /> </>} />
           <Route exact path='/products/:type' render={({match}) => {
             let productType = Object.keys(this.props).find(type => type === match.params.type)
-          return <Container productType={this.props[productType]} toggleCollection={this.toggleCollection}/>}}/>
+          return <> <Nav /><Container productType={this.props[productType]} toggleCollection={this.toggleCollection}/> </>}}/>
           <Route exact path='/collection' render={() => <Container type='collection' collection={this.props.collection} />} />
-          <Route exact path='/shopall' render={() => <Container type='shopall' allCategories={allCategories} />} />
+          <Route exact path='/shopall' render={() => <><Nav /><Container type='shopall' allCategories={allCategories} /> </>} />
           <Route component={PageNotFound} />
         </Switch>
       </>
