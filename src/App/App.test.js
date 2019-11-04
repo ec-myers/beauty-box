@@ -68,4 +68,13 @@ describe('mapDispatchToProps', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
+
+  it('should call dispatch with a setFoundations action', () => {
+    const actionToDispatch = setFoundations([{}, {}, {}]);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.setFoundations([{}, {}, {}]);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
 });
