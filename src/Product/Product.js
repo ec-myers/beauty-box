@@ -4,7 +4,6 @@ import { PropTypes } from 'prop-types';
 import './Product.scss';
 
 export const Product = ({ product, toggleCollection, collection }) => {
-  // const { collection } = this.props;
   let tagList = product.tag_list.map(tag => <li>{tag}</li>);
   let { brand, name, description, product_link, id} = product;
   let isSaved = collection.map(product => product.id).includes(id) ? 'saved' : '';
@@ -21,11 +20,11 @@ export const Product = ({ product, toggleCollection, collection }) => {
       <h3>{brand}</h3>
       <h4>{name}</h4>
       <p>{description}</p>
-      <ul className='tag-list'>{tagList}</ul>
+      <div className='tag-list-div'>
+        <ul className='tag-list'>{tagList}</ul>
+      </div>
       <footer>
-        <div className='shop-div'>
-          < a href={product_link}>SHOP</a>
-        </div>
+          <a href={product_link}>SHOP</a>
         <button onClick={() => toggleCollection(product)}>{btnMessage}</button>
       </footer>
     </div>
