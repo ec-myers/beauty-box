@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Category.scss';
 
-const Category = ({ isLoading }) => {
+export const Category = ({ isLoading }) => {
   return (
     <>
     <div className='hero-div'>
@@ -49,6 +49,6 @@ const Category = ({ isLoading }) => {
 
 export const mapStateToProps = ({ isLoading }) => ({
   isLoading
-})
+});
 
 export default connect(mapStateToProps)(Category);
