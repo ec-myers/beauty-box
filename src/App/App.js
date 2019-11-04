@@ -14,19 +14,20 @@ import { Route, Switch } from 'react-router-dom';
 export class App extends Component {
   componentDidMount = async() => {
     const { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setError, setLoading } = this.props;
+    
     try {
-      // setLoading(true);
-      // const lipsticks = await getProduct('lipstick');
-      // setLipsticks(lipsticks);
-      // const mascaras = await getProduct('mascara');
-      // setMascaras(mascaras);
-      // const foundations = await getProduct('foundation');
-      // setFoundations(foundations);
-      // const blushes = await getProduct('blush');
-      // setBlushes(blushes);
-      // const eyeshadows = await getProduct('eyeshadow');
-      // setEyeshadows(eyeshadows);
-      // setLoading(false)
+      setLoading(true);
+      const lipsticks = await getProduct('lipstick');
+      setLipsticks(lipsticks);
+      const mascaras = await getProduct('mascara');
+      setMascaras(mascaras);
+      const foundations = await getProduct('foundation');
+      setFoundations(foundations);
+      const blushes = await getProduct('blush');
+      setBlushes(blushes);
+      const eyeshadows = await getProduct('eyeshadow');
+      setEyeshadows(eyeshadows);
+      setLoading(false)
 
       if (localStorage.getItem('collection')) {
         const { setCollection } = this.props;
@@ -61,14 +62,15 @@ export class App extends Component {
   render() {
     const { foundations, mascaras, eyeshadows, blushes, lipsticks } = this.props;
     let allCategories = [...foundations, ...mascaras, ...eyeshadows, ...blushes, ...lipsticks];
+
     return (
       <>
         <Switch>
           <Route exact path='/' render={() => <> <Nav /> <Category /> </>} />
           <Route exact path='/products/:type' render={({match}) => {
             let productType = Object.keys(this.props).find(type => type === match.params.type)
-          return <> <Nav /><Container productType={this.props[productType]} toggleCollection={this.toggleCollection}/> </>}}/>
-          <Route exact path='/collection' render={() => <Container type='collection' collection={this.props.collection} />} />
+          return <> <Nav /><Container productType={this.props[productType]} toggleCollection={this.toggleCollection} /> </>}}/>
+          <Route exact path='/collection' render={() => <Container type='collection' collection={this.props.collection} toggleCollection={this.toggleCollection} />} />
           <Route exact path='/shopall' render={() => <><Nav /><Container type='shopall' allCategories={allCategories} /> </>} />
           <Route component={PageNotFound} />
         </Switch>
@@ -77,15 +79,13 @@ export class App extends Component {
   }
 }
 
-export const mapStateToProps = ({ lipsticks, mascaras, foundations, blushes, eyeshadows, collection, error, isLoading }) => ({
+export const mapStateToProps = ({ lipsticks, mascaras, foundations, blushes, eyeshadows, collection }) => ({
   lipsticks,
   mascaras,
   foundations,
   blushes,
   eyeshadows,
-  collection,
-  error,
-  isLoading
+  collection
 });
 
 export const mapDispatchToProps = dispatch => {
@@ -101,8 +101,6 @@ App.propTypes = {
   blushes: PropTypes.array,
   eyeshadows: PropTypes.array,
   collection: PropTypes.array,
-  error: PropTypes.string,
-  isLoading: PropTypes.bool,
   setLipsticks: PropTypes.func,
   setMascaras: PropTypes.func,
   setFoundations: PropTypes.func,
