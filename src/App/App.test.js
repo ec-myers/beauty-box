@@ -43,3 +43,20 @@ describe('mapStateToProps', () => {
     expect(mappedProps).toEqual(expected);
   });
 });
+
+describe('mapDispatchToProps', () => {
+  let mockDispatch;
+
+  beforeEach(() => {
+    mockDispatch = jest.fn();
+  });
+
+  it('should call dispatch with a setLipsticks action', () => {
+    const actionToDispatch = setLipsticks([{}, {}, {}]);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.setLipsticks([{}, {}, {}]);
+    
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+});
