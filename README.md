@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Beauty Box
 
-## Available Scripts
+Beauty Box is an application designed to allow users to browse beauty products by category - mascara, foundation, blush, eyeshadow and lipstick. Product details include images, brand, description and an external link to shop the retailer's website. Users can also keep track of their favorite products by adding them to their collection - this feature is implemented using localStorage. This application is powered by the [Makeup API](https://makeup-api.herokuapp.com/) and was bootstrapped with `create-react-app`.
 
-In the project directory, you can run:
+### View the live application [here]()!
 
-### `npm start`
+### Summary
+This project was an opportunity to focus on utilizing a modular architecture to create a user-friendly application with React. It was also a chance to practice nested fetch requests using `prop-types`, and  handling the UI based on acceptance of data. This application is accompanied by a full test suite that utilizes jest and enzyme. Testing provided an opportunity to write tests for asynchronous functionality, Redux and route handling as well as React components.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Planning/Project Management
+This project was managed using Trello. View the project board [here](https://trello.com/b/I3d36Pcc/beauty-box).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Languages & Technologies Used
 
-### `npm test`
+- React
+- Redux
+- Router
+- CSS/Sass
+- Webpack
+- Jest and Enyzme testing suite
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshots
 
-### `npm run build`
+#### Home Screen
+![home](https://user-images.githubusercontent.com/47042400/68166258-07b6cb80-ff1f-11e9-8a1b-682b3e39969f.png)
+#### Product Page
+![products](https://user-images.githubusercontent.com/47042400/68166416-8875c780-ff1f-11e9-9fbd-880b9d1fab2a.png)
+#### Collection Page
+![collection](https://user-images.githubusercontent.com/47042400/68166187-cde5c500-ff1e-11e9-8dff-83f98b851323.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Set Up
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+On the top right corner of this page, click the Fork button.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone down the forked repo (from your GitHub)
 
-### `npm run eject`
+Once you have cloned the repo, change into the directory and install the library dependencies. Run:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To view the Whats New? application, run:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Then navigate to your browser:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+http://localHost:3000/
+```
