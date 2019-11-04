@@ -77,4 +77,13 @@ describe('mapDispatchToProps', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
+
+  it('should call dispatch with a setBlushes action', () => {
+    const actionToDispatch = setBlushes([{}, {}, {}]);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.setBlushes([{}, {}, {}]);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
 });
