@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { App, mapStateToProps, mapDispatchToProps } from './App';
 import * as actions from '../actions/index';
-import { getProduct } from '../util/apiCalls';
 
 jest.mock('../util/apiCalls.js');
 jest.mock('../actions');
@@ -14,6 +13,7 @@ describe('App', () => {
   let blushes = [{}, {}, {}]
   let eyeshadows = [{}, {}, {}]
   let allCategories=[{}, {}, {}]
+  let collection = [{}, {}, {}]
   let wrapper = shallow(<App 
     setLipsticks={actions.setLipsticks}
     setMascaras={actions.setMascaras}
@@ -29,12 +29,25 @@ describe('App', () => {
     foundations={foundations}
     blushes={blushes}
     eyeshadows={eyeshadows}
+    collection={collection}
   />);
 
  it('should match the snapshot', () => {
 
   expect(wrapper).toMatchSnapshot();
  });
+
+  it('should call setCollection when addProduct is called', () => {
+    wrapper.instance().addProduct({});
+    expect(actions.setCollection).toHaveBeenCalled();
+  });
+
+  it('should call setCollection when removeProduct is called', () => {
+    wrapper.instance().removeProduct({});
+    expect(actions.setCollection).toHaveBeenCalled();
+  });
+});
+
 describe('componentDidMount', () => {
   it('should call setLipsticks', () => {
    expect(actions.setLipsticks).toHaveBeenCalled();
@@ -59,14 +72,6 @@ describe('componentDidMount', () => {
   it('should call setLoading', () => {
     expect(actions.setLoading).toHaveBeenCalled();
   });
-});
-
- it('should add a product to collection', () => {
-  let newCollection = [{}, {}];
-  let mockAction = 
-
-  expect(setCollection(newCollection)).toEqual(newCollection);
- });
 });
 
 describe('mapStateToProps', () => {
