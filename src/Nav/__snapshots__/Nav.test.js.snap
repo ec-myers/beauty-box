@@ -4,16 +4,17 @@ exports[`Nav should match snapshot 1`] = `
 <div
   className="Nav"
 >
-  <h3>
-    BEAUTYBOX
-  </h3>
+  <NavLink
+    exact={true}
+    to="/"
+  >
+    <h3>
+      BEAUTYBOX
+    </h3>
+  </NavLink>
   <div
     className="Nav-links"
   >
-    <NavLink
-      exact={true}
-      to="/"
-    />
     <NavLink
       to="/collection"
     >
