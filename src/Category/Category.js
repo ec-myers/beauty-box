@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import './Category.scss';
 
 export const Category = ({ isLoading }) => {
@@ -52,3 +53,7 @@ export const mapStateToProps = ({ isLoading }) => ({
 });
 
 export default connect(mapStateToProps)(Category);
+
+Category.propTypes = {
+  isLoading: PropTypes.bool
+}
