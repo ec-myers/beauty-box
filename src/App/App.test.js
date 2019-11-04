@@ -86,4 +86,13 @@ describe('mapDispatchToProps', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
+
+  it('should call dispatch with a setEyeshadows action', () => {
+    const actionToDispatch = setEyeshadows([{}, {}, {}]);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.setEyeshadows([{}, {}, {}]);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
 });
