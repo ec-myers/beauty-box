@@ -35,7 +35,7 @@ export default Container;
 
 Container.propTypes = {
   productType: PropTypes.array,
-  toggleCollection: Proptypes.func,
+  toggleCollection: PropTypes.func,
   type: PropTypes.string,
   collection: PropTypes.array,
   allCategories: PropTypes.array
