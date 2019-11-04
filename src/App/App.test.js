@@ -104,4 +104,13 @@ describe('mapDispatchToProps', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
+
+  it('should call dispatch with a setError action', () => {
+    const actionToDispatch = setError('Error');
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.setError('Error');
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
 });
