@@ -113,4 +113,13 @@ describe('mapDispatchToProps', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
+
+  it('should call dispatch with a setLoading action', () => {
+    const actionToDispatch = setLoading(true);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.setLoading(true);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
 });
