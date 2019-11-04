@@ -56,7 +56,16 @@ describe('mapDispatchToProps', () => {
     const mappedProps = mapDispatchToProps(mockDispatch);
 
     mappedProps.setLipsticks([{}, {}, {}]);
-    
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it('should call dispatch with a setMascaras action', () => {
+    const actionToDispatch = setMascaras([{}, {}, {}]);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.setMascaras([{}, {}, {}]);
+
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 });
