@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Nav from './Nav';
+import PageNotFound from './PageNotFound';
 
-describe('Nav', () => {
+describe('PageNotFound', () => {
   it('should match snapshot', () => {
-    let wrapper = shallow(<Nav />);
+    let wrapper = shallow(<PageNotFound />);
 
     expect(wrapper).toMatchSnapshot();
   });

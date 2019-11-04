@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Category should match the snapshot 1`] = `
+<Fragment>
+  <div
+    className="hero-div"
+  >
+    <img
+      alt="woman smiling at the camera"
+      src="hero_img_left.jpg"
+    />
+    <div
+      className="shop-div"
+    >
+      <h3>
+        EXPLORE
+      </h3>
+      <h3>
+        BEAUTY
+      </h3>
+      <Link
+        to="/shopall"
+      >
+        <button>
+          SHOP ALL
+        </button>
+      </Link>
+    </div>
+    <img
+      alt="perfume on a blanket"
+      src="hero_image_right.jpg"
+    />
+  </div>
+  <div
+    className="categories-div"
+  >
+    <Link
+      to="/products/foundations"
+    >
+      <div
+        className="foundation-div"
+      >
+        <h4>
+          FOUNDATION
+        </h4>
+      </div>
+    </Link>
+    <Link
+      to="/products/blushes"
+    >
+      <div
+        className="blush-div"
+      >
+        <h4>
+          BLUSH
+        </h4>
+      </div>
+    </Link>
+    <Link
+      to="/products/mascaras"
+    >
+      <div
+        className="mascara-div"
+      >
+        <h4>
+          MASCARA
+        </h4>
+      </div>
+    </Link>
+    <Link
+      to="/products/eyeshadows"
+    >
+      <div
+        className="eyeshadow-div"
+      >
+        <h4>
+          EYESHADOW
+        </h4>
+      </div>
+    </Link>
+    <Link
+      to="/products/lipsticks"
+    >
+      <div
+        className="lipstick-div"
+      >
+        <h4>
+          LIPSTICK
+        </h4>
+      </div>
+    </Link>
+  </div>
+</Fragment>
+`;

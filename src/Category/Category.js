@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Category.scss';
 
-const Category = ({ isLoading }) => {
+export const Category = ({ isLoading }) => {
   return (
     <>
     <div className='hero-div'>
@@ -11,7 +11,7 @@ const Category = ({ isLoading }) => {
       <div className='shop-div'>
         <h3>EXPLORE</h3>
         <h3>BEAUTY</h3>
-        <button>SHOP ALL</button>
+          <Link to='/shopall'><button>SHOP ALL</button></Link>
       </div>
         <img src={require('../Images/hero_image_right.jpg')} alt='perfume on a blanket'></img>
     </div>
@@ -49,6 +49,6 @@ const Category = ({ isLoading }) => {
 
 export const mapStateToProps = ({ isLoading }) => ({
   isLoading
-})
+});
 
 export default connect(mapStateToProps)(Category);
