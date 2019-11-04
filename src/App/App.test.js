@@ -1,19 +1,49 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { App, mapStateToProps, mapDispatchToProps } from './App';
-import { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection, setError, setLoading } from '../actions/index';
+import * as actions from '../actions/index';
+import { getProduct } from '../util/apiCalls';
 
 jest.mock('../util/apiCalls.js');
+jest.mock('../actions');
 
 describe('App', () => {
- it.skip('should match the snapshot', () => {
-  let wrapper = shallow(<App />);
+  let lipsticks = [{}, {}, {}]
+  let mascaras = [{}, {}, {}]
+  let foundations = [{}, {}, {}]
+  let blushes = [{}, {}, {}]
+  let eyeshadows = [{}, {}, {}]
+  let allCategories=[{}, {}, {}]
+  let wrapper = shallow(<App 
+    setLipsticks={actions.setLipsticks}
+    setMascaras={actions.setMascaras}
+    setFoundations={actions.setFoundations}
+    setBlushes={actions.setBlushes}
+    setEyeshadows={actions.setEyeshadows}
+    setCollection={actions.setCollection}
+    setError={actions.setError}
+    setLoading={actions.setLoading}
+    allCategories={allCategories}
+    lipsticks={lipsticks}
+    mascaras={mascaras}
+    foundations={foundations}
+    blushes={blushes}
+    eyeshadows={eyeshadows}
+  />);
+
+ it('should match the snapshot', () => {
 
   expect(wrapper).toMatchSnapshot();
  });
 
+ it('should call setLipsticks', () => {
+   
+  expect(actions.setLipsticks).toHaveBeenCalled();
+ });
+
  it('should add a product to collection', () => {
   let newCollection = [{}, {}];
+  let mockAction = 
 
   expect(setCollection(newCollection)).toEqual(newCollection);
  });
@@ -58,7 +88,7 @@ describe('mapDispatchToProps', () => {
   });
 
   it('should call dispatch with a setLipsticks action', () => {
-    const actionToDispatch = setLipsticks([{}, {}, {}]);
+    const actionToDispatch = actions.setLipsticks([{}, {}, {}]);
     const mappedProps = mapDispatchToProps(mockDispatch);
 
     mappedProps.setLipsticks([{}, {}, {}]);
@@ -67,7 +97,7 @@ describe('mapDispatchToProps', () => {
   });
 
   it('should call dispatch with a setMascaras action', () => {
-    const actionToDispatch = setMascaras([{}, {}, {}]);
+    const actionToDispatch = actions.setMascaras([{}, {}, {}]);
     const mappedProps = mapDispatchToProps(mockDispatch);
 
     mappedProps.setMascaras([{}, {}, {}]);
@@ -76,7 +106,7 @@ describe('mapDispatchToProps', () => {
   });
 
   it('should call dispatch with a setFoundations action', () => {
-    const actionToDispatch = setFoundations([{}, {}, {}]);
+    const actionToDispatch = actions.setFoundations([{}, {}, {}]);
     const mappedProps = mapDispatchToProps(mockDispatch);
 
     mappedProps.setFoundations([{}, {}, {}]);
@@ -85,7 +115,7 @@ describe('mapDispatchToProps', () => {
   });
 
   it('should call dispatch with a setBlushes action', () => {
-    const actionToDispatch = setBlushes([{}, {}, {}]);
+    const actionToDispatch = actions.setBlushes([{}, {}, {}]);
     const mappedProps = mapDispatchToProps(mockDispatch);
 
     mappedProps.setBlushes([{}, {}, {}]);
@@ -94,7 +124,7 @@ describe('mapDispatchToProps', () => {
   });
 
   it('should call dispatch with a setEyeshadows action', () => {
-    const actionToDispatch = setEyeshadows([{}, {}, {}]);
+    const actionToDispatch = actions.setEyeshadows([{}, {}, {}]);
     const mappedProps = mapDispatchToProps(mockDispatch);
 
     mappedProps.setEyeshadows([{}, {}, {}]);
@@ -103,7 +133,7 @@ describe('mapDispatchToProps', () => {
   });
 
   it('should call dispatch with a setCollection action', () => {
-    const actionToDispatch = setCollection([{}, {}, {}]);
+    const actionToDispatch = actions.setCollection([{}, {}, {}]);
     const mappedProps = mapDispatchToProps(mockDispatch);
 
     mappedProps.setCollection([{}, {}, {}]);
@@ -112,7 +142,7 @@ describe('mapDispatchToProps', () => {
   });
 
   it('should call dispatch with a setError action', () => {
-    const actionToDispatch = setError('Error');
+    const actionToDispatch = actions.setError('Error');
     const mappedProps = mapDispatchToProps(mockDispatch);
 
     mappedProps.setError('Error');
@@ -121,7 +151,7 @@ describe('mapDispatchToProps', () => {
   });
 
   it('should call dispatch with a setLoading action', () => {
-    const actionToDispatch = setLoading(true);
+    const actionToDispatch = actions.setLoading(true);
     const mappedProps = mapDispatchToProps(mockDispatch);
 
     mappedProps.setLoading(true);
