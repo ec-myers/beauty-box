@@ -18,31 +18,21 @@ export const Category = ({ isLoading }) => {
     </div>
     {isLoading && <img className='loading-img' src={require('../Images/loading.gif')} alt='loading' />}
     {!isLoading && <div className='categories-div'>
-      <div className='foundation-div'>
-        <Link to={ '/products/foundations'}> 
-          <button>FOUNDATION</button>
-        </Link>
-      </div> 
-      <div className='blush-div'>
-        <Link to='/products/blushes'>
-            <button>BLUSH</button>
-        </Link>
-      </div>
-      <div className='mascara-div'>
-        <Link to='/products/mascaras'>
-          <button>MASCARA</button>
-        </Link>
-      </div>
-      <div className='eyeshadow-div'>
-        <Link to='/products/eyeshadows'>
-          <button>EYESHADOW</button>
-        </Link>
-      </div>
-      <div className='lipstick-div'>
-        <Link to='/products/lipsticks'>
-          <button>LIPSTICK</button>
-        </Link>
-      </div>
+      <Link to={ '/products/foundations'}> 
+        <button className='foundation-div'>FOUNDATION</button>
+      </Link>
+      <Link to='/products/blushes'>
+        <button className='blush-div'>BLUSH</button>
+      </Link>
+      <Link to='/products/mascaras'>
+        <button className='mascara-div'>MASCARA</button>
+      </Link>
+      <Link to='/products/eyeshadows'>
+        <button className='eyeshadow-div'>EYESHADOW</button>
+      </Link>
+      <Link to='/products/lipsticks'>
+        <button className='lipstick-div'>LIPSTICK</button>
+      </Link>
     </div>}
     </>
   )
