@@ -35,11 +35,31 @@ describe('App', () => {
 
   expect(wrapper).toMatchSnapshot();
  });
+describe('componentDidMount', () => {
+  it('should call setLipsticks', () => {
+   expect(actions.setLipsticks).toHaveBeenCalled();
+  });
 
- it('should call setLipsticks', () => {
-   
-  expect(actions.setLipsticks).toHaveBeenCalled();
- });
+  it('should call setMascaras', () => {
+    expect (actions.setMascaras).toHaveBeenCalled();
+  });
+
+  it('should call setFoundations', () => {
+    expect(actions.setFoundations).toHaveBeenCalled();
+  });
+
+  it('should call setBlushes', () => {
+    expect(actions.setBlushes).toHaveBeenCalled();
+  });
+
+  it('should call setEyeshadows', () => {
+    expect(actions.setEyeshadows).toHaveBeenCalled();
+  });
+
+  it('should call setLoading', () => {
+    expect(actions.setLoading).toHaveBeenCalled();
+  });
+});
 
  it('should add a product to collection', () => {
   let newCollection = [{}, {}];
