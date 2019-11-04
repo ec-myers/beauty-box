@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import './Product.scss';
 
 export const Product = ({ product, toggleCollection, collection }) => {
@@ -36,3 +37,9 @@ export const mapStateToProps = ({collection}) => ({
 });
 
 export default connect(mapStateToProps)(Product);
+
+Product.propTypes = {
+  product: PropTypes.object,
+  toggleCollection: PropTypes.func,
+  collection: PropTypes.array
+}
