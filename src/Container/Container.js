@@ -32,3 +32,11 @@ const Container = ({productType, toggleCollection, type, collection , allCategor
 }
 
 export default Container;
+
+Container.propTypes = {
+  productType: PropTypes.array,
+  toggleCollection: Proptypes.func,
+  type: PropTypes.string,
+  collection: PropTypes.array,
+  allCategories: PropTypes.array
+}
