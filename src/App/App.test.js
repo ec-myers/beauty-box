@@ -11,6 +11,12 @@ describe('App', () => {
 
   expect(wrapper).toMatchSnapshot();
  });
+
+ it('should add a product to collection', () => {
+  let newCollection = [{}, {}];
+
+  expect(setCollection(newCollection)).toEqual(newCollection);
+ });
 });
 
 describe('mapStateToProps', () => {

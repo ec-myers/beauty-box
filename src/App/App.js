@@ -10,22 +10,22 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Route, Switch } from 'react-router-dom';
 
-class App extends Component {
+export class App extends Component {
   componentDidMount = async() => {
     const { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setError, setLoading } = this.props;
     try {
-      setLoading(true);
-      const lipsticks = await getProduct('lipstick');
-      setLipsticks(lipsticks);
-      const mascaras = await getProduct('mascara');
-      setMascaras(mascaras);
-      const foundations = await getProduct('foundation');
-      setFoundations(foundations);
-      const blushes = await getProduct('blush');
-      setBlushes(blushes);
-      const eyeshadows = await getProduct('eyeshadow');
-      setEyeshadows(eyeshadows);
-      setLoading(false)
+      // setLoading(true);
+      // const lipsticks = await getProduct('lipstick');
+      // setLipsticks(lipsticks);
+      // const mascaras = await getProduct('mascara');
+      // setMascaras(mascaras);
+      // const foundations = await getProduct('foundation');
+      // setFoundations(foundations);
+      // const blushes = await getProduct('blush');
+      // setBlushes(blushes);
+      // const eyeshadows = await getProduct('eyeshadow');
+      // setEyeshadows(eyeshadows);
+      // setLoading(false)
 
       if (localStorage.getItem('collection')) {
         const { setCollection } = this.props;
@@ -60,7 +60,6 @@ class App extends Component {
   render() {
     const { foundations, mascaras, eyeshadows, blushes, lipsticks } = this.props;
     let allCategories = [...foundations, ...mascaras, ...eyeshadows, ...blushes, ...lipsticks];
-    console.log('allCategories', allCategories)
     return (
       <>
         <Switch>
