@@ -8,6 +8,7 @@ import { getProduct } from '../util/apiCalls';
 import { setLipsticks, setMascaras, setFoundations, setBlushes, setEyeshadows, setCollection, setError, setLoading } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { PropTypes } from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 
 export class App extends Component {
@@ -92,3 +93,22 @@ export const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+App.propTypes = {
+  lipsticks: PropTypes.array,
+  mascaras: PropTypes.array,
+  foundations: PropTypes.array,
+  blushes: PropTypes.array,
+  eyeshadows: PropTypes.array,
+  collection: PropTypes.array,
+  error: PropTypes.string,
+  isLoading: PropTypes.bool,
+  setLipsticks: PropTypes.func,
+  setMascaras: PropTypes.func,
+  setFoundations: PropTypes.func,
+  setBlushes: PropTypes.func,
+  setEyeshadows: PropTypes.func,
+  setCollection: PropTypes.func,
+  setError: PropTypes.func,
+  setLoading: PropTypes.func,
+}
