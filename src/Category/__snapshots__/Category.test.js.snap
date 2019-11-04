@@ -9,6 +9,10 @@ exports[`Category should match the snapshot 1`] = `
       alt="woman smiling at the camera"
       src="hero_img_left.jpg"
     />
+    <img
+      alt="sunglasses and a record on a table"
+      src="hero_image_4.jpg"
+    />
     <div
       className="shop-div"
     >
@@ -26,69 +30,65 @@ exports[`Category should match the snapshot 1`] = `
         </button>
       </Link>
     </div>
-    <img
-      alt="perfume on a blanket"
-      src="hero_image_right.jpg"
-    />
   </div>
   <div
     className="categories-div"
   >
-    <Link
-      to="/products/foundations"
+    <div
+      className="foundation-div"
     >
-      <div
-        className="foundation-div"
+      <Link
+        to="/products/foundations"
       >
-        <h4>
+        <a>
           FOUNDATION
-        </h4>
-      </div>
-    </Link>
-    <Link
-      to="/products/blushes"
+        </a>
+      </Link>
+    </div>
+    <div
+      className="blush-div"
     >
-      <div
-        className="blush-div"
+      <Link
+        to="/products/blushes"
       >
-        <h4>
+        <a>
           BLUSH
-        </h4>
-      </div>
-    </Link>
-    <Link
-      to="/products/mascaras"
+        </a>
+      </Link>
+    </div>
+    <div
+      className="mascara-div"
     >
-      <div
-        className="mascara-div"
+      <Link
+        to="/products/mascaras"
       >
-        <h4>
+        <a>
           MASCARA
-        </h4>
-      </div>
-    </Link>
-    <Link
-      to="/products/eyeshadows"
+        </a>
+      </Link>
+    </div>
+    <div
+      className="eyeshadow-div"
     >
-      <div
-        className="eyeshadow-div"
+      <Link
+        to="/products/eyeshadows"
       >
-        <h4>
+        <a>
           EYESHADOW
-        </h4>
-      </div>
-    </Link>
-    <Link
-      to="/products/lipsticks"
+        </a>
+      </Link>
+    </div>
+    <div
+      className="lipstick-div"
     >
-      <div
-        className="lipstick-div"
+      <Link
+        to="/products/lipsticks"
       >
-        <h4>
+        <a>
           LIPSTICK
-        </h4>
-      </div>
-    </Link>
+        </a>
+      </Link>
+    </div>
   </div>
 </Fragment>
 `;
