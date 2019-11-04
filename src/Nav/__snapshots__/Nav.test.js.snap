@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match snapshot 1`] = `
+<div
+  className="Nav"
+>
+  <h3>
+    BEAUTYBOX
+  </h3>
+  <div
+    className="Nav-links"
+  >
+    <NavLink
+      exact={true}
+      to="/"
+    />
+    <NavLink
+      to="/collection"
+    >
+      YOUR COLLECTION
+    </NavLink>
+  </div>
+</div>
+`;
