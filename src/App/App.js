@@ -70,7 +70,7 @@ export class App extends Component {
           <Route exact path='/products/:type' render={({match}) => {
             let productType = Object.keys(this.props).find(type => type === match.params.type)
           return <> <Nav /><Container productType={this.props[productType]} toggleCollection={this.toggleCollection} /> </>}}/>
-          <Route exact path='/collection' render={() => <Container type='collection' collection={this.props.collection} toggleCollection={this.toggleCollection} />} />
+          <Route exact path='/collection' render={() => <> <Nav /> <Container type='collection' collection={this.props.collection} toggleCollection={this.toggleCollection} /></>} />
           <Route exact path='/shopall' render={() => <><Nav /><Container type='shopall' allCategories={allCategories} /> </>} />
           <Route component={PageNotFound} />
         </Switch>
