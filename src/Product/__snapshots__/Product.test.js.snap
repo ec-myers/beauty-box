@@ -32,26 +32,26 @@ exports[`Product should match the snapshot 1`] = `
   <p>
     Description
   </p>
-  <ul
-    className="tag-list"
+  <div
+    className="tag-list-div"
   >
-    <li>
-      tag1
-    </li>
-    <li>
-      tag2
-    </li>
-  </ul>
-  <footer>
-    <div
-      className="shop-div"
+    <ul
+      className="tag-list"
     >
-      <a
-        href="https://colourpop.com/"
-      >
-        SHOP
-      </a>
-    </div>
+      <li>
+        tag1
+      </li>
+      <li>
+        tag2
+      </li>
+    </ul>
+  </div>
+  <footer>
+    <a
+      href="https://colourpop.com/"
+    >
+      SHOP
+    </a>
     <button
       onClick={[Function]}
     >

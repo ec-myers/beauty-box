@@ -34,61 +34,51 @@ exports[`Category should match the snapshot 1`] = `
   <div
     className="categories-div"
   >
-    <div
-      className="foundation-div"
+    <Link
+      to="/products/foundations"
     >
-      <Link
-        to="/products/foundations"
+      <button
+        className="foundation-div"
       >
-        <a>
-          FOUNDATION
-        </a>
-      </Link>
-    </div>
-    <div
-      className="blush-div"
+        FOUNDATION
+      </button>
+    </Link>
+    <Link
+      to="/products/blushes"
     >
-      <Link
-        to="/products/blushes"
+      <button
+        className="blush-div"
       >
-        <a>
-          BLUSH
-        </a>
-      </Link>
-    </div>
-    <div
-      className="mascara-div"
+        BLUSH
+      </button>
+    </Link>
+    <Link
+      to="/products/mascaras"
     >
-      <Link
-        to="/products/mascaras"
+      <button
+        className="mascara-div"
       >
-        <a>
-          MASCARA
-        </a>
-      </Link>
-    </div>
-    <div
-      className="eyeshadow-div"
+        MASCARA
+      </button>
+    </Link>
+    <Link
+      to="/products/eyeshadows"
     >
-      <Link
-        to="/products/eyeshadows"
+      <button
+        className="eyeshadow-div"
       >
-        <a>
-          EYESHADOW
-        </a>
-      </Link>
-    </div>
-    <div
-      className="lipstick-div"
+        EYESHADOW
+      </button>
+    </Link>
+    <Link
+      to="/products/lipsticks"
     >
-      <Link
-        to="/products/lipsticks"
+      <button
+        className="lipstick-div"
       >
-        <a>
-          LIPSTICK
-        </a>
-      </Link>
-    </div>
+        LIPSTICK
+      </button>
+    </Link>
   </div>
 </Fragment>
 `;
