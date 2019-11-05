@@ -2,7 +2,7 @@
 
 Beauty Box is an application designed to allow users to browse beauty products by category - mascara, foundation, blush, eyeshadow and lipstick. Product details include images, brand, description and an external link to shop the retailer's website. Users can also keep track of their favorite products by adding them to their collection - this feature is implemented using localStorage. This application is powered by the [Makeup API](https://makeup-api.herokuapp.com/) and was bootstrapped with `create-react-app`.
 
-### View the live application [here]()!
+### View the live application [here](https://the-beauty-box.herokuapp.com)!
 
 ### Summary
 This project was an opportunity to focus on utilizing a modular architecture to create a user-friendly application with React. It was also a chance to practice nested fetch requests using `prop-types`, and  handling the UI based on acceptance of data. This application is accompanied by a full test suite that utilizes jest and enzyme. Testing provided an opportunity to write tests for asynchronous functionality, Redux and route handling as well as React components.
